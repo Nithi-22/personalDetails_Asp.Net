@@ -1,0 +1,133 @@
+
+@model Register
+
+@try{
+  if(TempData["showmsg"]==null){
+    <script>swal("Good job!", "Successfully added", "success");</script>
+  }
+  else{
+    
+  }
+}
+catch{
+
+} 
+<!DOCTYPE html>    
+<html>    
+<head runat="server">    
+    <title>Signup Form</title>    
+     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/css/signup.css"> 
+<script scr="site.js"></script>
+
+</head>    
+<body> 
+    <div class="d-flex flex-row">
+            <div>
+         <img src="https://media.istockphoto.com/id/1129644198/vector/recruitment-modern-line-design-style-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZBHS-k5azwnflpGW5gRmseB4CxUOpUUmGA3I45mJk9E=" height=450px width=600px  alt="hello">
+         </div>
+    
+    <form method="Post" >
+    <div class="signup" class="form-control"><br>
+    
+        <label asp-for="emp_name"  ><b> &nbsp; Name </b></label>
+        <input asp-for="emp_name" size=30px id="emp_name" placeholder="Enter name of the employee" id="validationCustomUsername"aria-describedby="inputGroupPrepend" required >
+         <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+        <br><br>
+     <p class="email" class="form-control">
+        <label asp-for="empemail" ><b>&nbsp; Email address </b> </label>
+        <input asp-for="empemail" type="email"  size=30px placeholder="Enter email" id="email"aria-describedby="inputGroupPrepend" required/>
+         <div class="invalid-feedback">
+        Please choose a useremail.
+      </div> 
+    </p>
+    
+    <p  >
+        <label asp-for="empphoneno" ><b> &nbsp;&nbsp;Phone No </b> </label>
+        <input asp-for="empphoneno" size=30px placeholder="Enter phoneno" id="validationphoneno"aria-describedby="inputGroupPrepend" required/>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    <p >
+        <label asp-for="emprole" ><b>&nbsp;&nbsp;Role  </b> </label>
+        <input asp-for="emprole" size=30px placeholder="Enter role of the employee"  id="validationrole"aria-describedby="inputGroupPrepend" required/>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    <p >
+        <label asp-for="empjoiningdate" ><b>&nbsp;&nbsp;Joining date </b> </label>
+        <input asp-for="empjoiningdate" type="date" placeholder="Enter joining date with time" id="validationjoiningdate"aria-describedby="inputGroupPrepend" required/>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    <p >
+        <label asp-for="empaddr" ><b>&nbsp;&nbsp;Address </b> </label>
+        <input asp-for="empaddr" size=30px id="validationaddr" placeholder="Enter employee's address"/>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    
+        <p>
+        &nbsp;&nbsp;<b> City </b>
+        <select asp-for="empcity" id="validationcity">
+            <option value="Chennai">Chennai</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Erode">Erode</option>
+        </select>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+        
+    
+    <p>
+        &nbsp;&nbsp;<b>State</b><select asp-for="empstate" id="validationstate">
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+        </select>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    <p>
+        &nbsp;&nbsp;<b>Blood Group</b><select asp-for="empbg" id="validationbg">
+            <option value="O+">O+</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+        </select>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    <p>
+        <label asp-for="empdob" ><b>&nbsp;&nbsp;DateOfBirth </b> </label>
+        <input asp-for="empdob" type="date" id="validationdob" size=30px placeholder="Enter dob"/>
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+    </p>
+    
+    
+    
+</div> 
+<div class="m-2 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+
+    </div>
+</form>
+
+</div>
+    
+    
+</body>    
+</html>    

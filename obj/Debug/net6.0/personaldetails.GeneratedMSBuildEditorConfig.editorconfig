@@ -1,0 +1,176 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = personaldetails
+build_property.RootNamespace = personaldetails
+build_property.ProjectDir = c:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = c:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails
+build_property._RazorSourceGeneratorDebug = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/api/apipersonaldetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXGFwaXBlcnNvbmFsZGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/api/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Dashboard/CookiesRead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENvb2tpZXNSZWFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Dashboard/CookiesRemove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENvb2tpZXNSZW1vdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Entity/confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50aXR5XGNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Entity/IsEmailExist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50aXR5XElzRW1haWxFeGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Entity/Personal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50aXR5XFBlcnNvbmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Entity/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50aXR5XFNpZ251cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/HrLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIckxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Home/wrong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx3cm9uZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/choose.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxjaG9vc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/chooseperformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxjaG9vc2VwZXJmb3JtYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/chooseteam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxjaG9vc2V0ZWFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/choosetransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxjaG9vc2V0cmFuc2FjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Dailyperformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxEYWlseXBlcmZvcm1hbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/editperformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxlZGl0cGVyZm9ybWFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/editpersonaldetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxlZGl0cGVyc29uYWxkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/editteam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxlZGl0dGVhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/edittransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxlZGl0dHJhbnNhY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/performancehr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxwZXJmb3JtYW5jZWhyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Personal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQZXJzb25hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/personaldetailshr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxwZXJzb25hbGRldGFpbHNoci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/SessionExpired.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTZXNzaW9uRXhwaXJlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Successhr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTdWNjZXNzaHIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Team.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxUZWFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/teamhr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblx0ZWFtaHIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/Transaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxUcmFuc2FjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Main/transactionhr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblx0cmFuc2FjdGlvbmhyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/ELLIOT/Desktop/Nithi/ASPIRE/ASP.NET/personaldetails/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8tbhgcwef7

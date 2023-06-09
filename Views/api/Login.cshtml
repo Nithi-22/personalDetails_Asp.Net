@@ -1,0 +1,80 @@
+
+@model Login
+ @try{
+  if(TempData["Message"]!=null){
+    <script>swal("oops!", "Invalid Email or password!", "error");</script>
+  }
+  else{
+    
+  }
+}
+catch{
+
+} 
+<!DOCTYPE html>    
+<html> 
+    
+<head runat="server">    
+    <title>Login Form</title>    
+    <!-- <link rel="stylesheet" type="text/css" href="css/site.css"> --> 
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+<script src="site.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  
+</head>    
+<body> 
+    <div class="d-flex flex-row">
+            <div>
+         <img src="https://media.istockphoto.com/id/1129644198/vector/recruitment-modern-line-design-style-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZBHS-k5azwnflpGW5gRmseB4CxUOpUUmGA3I45mJk9E=" height=450px width=700px  alt="hello">
+         </div>
+    <div class="main">
+    <div class="login">
+    <form method="Post" >
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <p class="mb-3">
+        <label asp-for="empemail"  ><b>Email Address: </b></label>
+        <input asp-for="empemail" name="empemail" type="email" class="rounded  p-1" id="empemail" placeholder="Enter email address" id="validationCustomUsername"aria-describedby="inputGroupPrepend" required/>
+         <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+
+    </p>
+    
+    <p>
+        <label asp-for="emppass" ><b>Password: </b> </label>
+        <input asp-for="emppass" name="emppass" class="rounded  p-1" id="emppass" placeholder="Enter password" id="validationCustomUsername"aria-describedby="inputGroupPrepend" required  />
+        <div class="invalid-feedback">
+        Please fill this field.
+      </div>
+         
+    </p>
+    @* <p class="forgot">
+        <a href="#">Forgotpassword?</a>
+       
+    </p> *@
+    <p style="font-size:12px"; >
+        <input id="CheckBox1" type="checkbox" name="CheckBox2" /><label for="CheckBox2" id="CheckBox2" name="check" ><b>&nbsp;Remember me</b></label>
+    </p> 
+    @* <asp:Label id="msglabel" runat="server" Text="label" Visible="False"/> *@
+    <div class="btn">
+    <button type="submit" class="btn btn-primary rounded-pill" >Submit</button></div>
+      <div class="msg">
+        @if(ViewData["Message"]!=null)
+         @ViewData["Message"]
+       </div>
+       @if(ViewData["msg"]!=null){
+        <br/>
+        <br/>
+        <label>@ViewData["msg"]</label>
+       }
+      
+
+</form>
+</div>
+</div>
+</div>
+ 
+</body>    
+</html>    

@@ -1,0 +1,163 @@
+/* body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:white;  
+    font-family: 'Arial';  
+}  
+/*div{
+    height:10px;
+}
+
+
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 20px;  
+
+}  
+
+ 
+#Uemail{  
+    width: 240px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    
+}  
+#Pass{  
+    width: 240px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#log{  
+    width: 240px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+  
+  
+}  
+span{  
+    color: white;  
+    font-size: 17px; 
+    
+}  
+a{  
+    float: left;  
+    background-color: white;  
+    font-size: small;
+
+}   */
+
+/* .login{  
+    width: 360px;  
+    height:445px;
+    overflow:visible;  
+     margin: auto;   
+     margin: 40 0 0 400px;   
+    padding: 80px;  
+    background:cyan;  
+    border-radius: 15px ;  
+    
+    
+      
+}   */
+
+.signup{
+    height:500px;
+    width:450px;
+    margin-left: 60px;
+    margin-right:60px;
+    background-color: lightcyan;
+    box-sizing:border-box;
+    border: 1px solid;
+    overflow: visible;
+    border-radius:40px;
+    
+    padding:20px;
+    
+    
+}
+.btn{
+    text-align: center;
+   
+}
+.layout{
+    margin-left: 400px;
+    margin-top: 75px;
+    border: 3px solid ;
+    border-radius: 30px ; 
+    
+    box-sizing: content-box;
+    padding:10px;
+    width: 500px;
+  height: 300px;
+  background-color: aqua;
+  
+}
+#sub{
+    margin-left: 170px;
+    margin-top: 60px;
+}
+.pass{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+.emaill{
+    margin-top: 50px;
+}
+/* .error{
+    position:absolute;
+    padding:1% 20%;
+    border-radius: 3px;
+    color: red;
+    background-color:bisque;
+
+}
+.error::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+ 
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%; left: 10%;
+}
+
+.error:nth-child(2){
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+.error:nth-child(2)::before{
+    border-top: 9px solid #D9F0FD;
+}
+
+.error:nth-child(3){
+    top: 140px;
+    padding: 1% 18%;
+    background-color: #6DFFA7;
+}
+
+.error:nth-child(3)::before{
+    border-top: 9px solid #6DFFA7;
+}
+
+.error:nth-child(4){
+    top: 210px;
+    background-color: #ffd866;
+}
+
+.error:nth-child(4)::before{
+    border-top: 9px solid #ffd866;
+}
+ */
