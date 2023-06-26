@@ -73,6 +73,14 @@ body{
   
   padding:20px;
 }
+.btn{
+  text-align: center;
+ 
+}
+#sub{
+  margin-left: 170px;
+  margin-top: 60px;
+}
 #butview{
   margin-left: 650px;
   margin-top: 30px;

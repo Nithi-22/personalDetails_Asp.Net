@@ -1,15 +1,18 @@
- @model personaldetails.Models.Register;
+  @model personaldetails.Models.Register;  
+ 
+ 
     
     
-@{
+@* @{
     ViewBag.Title = "Edit";
-}
+} *@
 @{ Layout = null; } 
+
 @try{
-  if(TempData["showmsgg"]!=null){
-    <script>swal("", "Data has been stored.Kindly login by clicking the login button", "success");
+  if(TempData["showmsg"]==null){
+    <script> swal("Nice", "Data has been edited", "success");</script>
      
-    </script>
+    
     
     
     
@@ -21,35 +24,46 @@
 }
 catch{
 
-} 
+}
+<!DOCTYPE html>    
+
 <html>
-    <head>
+    
         <head runat="server"> 
         
-        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  @* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> *@
   <link rel="stylesheet" type="text/css" href="~/css/personaldetailshr.css"> 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  @* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> *@
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script> 
+  <script scr="site.js"></script>
     </head>
 
-    </head>
+    
 
  @using (Html.BeginForm("editpersonaldetails", "Main", FormMethod.Post))
 {
+    
     
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
         <h4>Edit Personal Details</h4>
+        
         <hr /> 
           @Html.ValidationSummary(true, "", new { @class = "text-danger" })  
-         @* @Html.HiddenFor(model => model.StudentId)  *@
-
+          @* @Html.HiddenFor(model => model.empemail, new { value = Model?.empemail }) *@
+             
          <div class="form-group">
             @Html.LabelFor(model => model.emp_name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.emp_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.emp_name, new { htmlAttributes = new { @class = "form-control",name="emp_name"  } })
                 
             </div>
         </div>
@@ -57,181 +71,86 @@ catch{
             
             @Html.LabelFor(model => model.empemail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empemail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empemail, new { htmlAttributes = new { @class = "form-control",name="emp_email"  } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empaddr, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empaddr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empaddr, new { htmlAttributes = new { @class = "form-control",name="emp_addr"  } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empcity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empcity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empcity, new { htmlAttributes = new { @class = "form-control" },name="empcity"  })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empstate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empstate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empstate, new { htmlAttributes = new { @class = "form-control" },name="empstate"  })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.emprole, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.emprole, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.emprole, new { htmlAttributes = new { @class = "form-control",name="emprole"  } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empphoneno, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empphoneno, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empphoneno, new { htmlAttributes = new { @class = "form-control",name="empphoneno"  } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empjoiningdate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empjoiningdate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empjoiningdate, new { htmlAttributes = new { @class = "form-control" ,name="empjoiningdate" } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empdob, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empdob, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empdob, new { htmlAttributes = new { @class = "form-control",name="empdob"  } })
                 
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.empbg, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.empbg, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.empbg, new { htmlAttributes = new { @class = "form-control",name="empbg"  } })
                 
             </div>
         </div>
-
+              
     
 
-        <div class="form-group">
+        @* <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="Submit" value="Save" class="btn btn-default"  />
             </div>
-        </div>
-    </div> 
-}
-
-@* <body>
-    
-    <form method="Post" runat="server" >
-    <div class="signup" class="form-control">
-       
-           @foreach(var item in Model){ 
-    <b> &nbsp; Name :<input asp-for="emp_name" id="emp_name" placeholder= "@item.emp_name" name="emp_name"></b> 
-    
-    
-       
-         
-        <br><br>
-        
-     
-    
-    <p  >
-        
-        <b> &nbsp;&nbsp;Phone No :<input type="number" placeholder="@item.empphoneno" name="empphoneno">  </b> 
-        
-         
-    </p>
-
-    <p >
-
-       <b>&nbsp;&nbsp;Role :<input  type="text" placeholder= "@item.emprole" name="emprole" > </b> 
-        
-
-    </p>
-    <p >
-        
-        <b>&nbsp;&nbsp;Joining date :<input type="date" placeholder="@item.empjoiningdate" name="empjoiningdate">  </b>
-        
-         
-    </p>
-    <p >
-        
-        <b>&nbsp;&nbsp;Address :<input type="textarea" placeholder= "@item.empaddr" name="empaddr" > </b> 
-        
-        
-    </p>
-    
-        <p>
            
-        <b>&nbsp;&nbsp;City :<input type="text" placeholder="@item.empcity" name="empcity"> </b>
+        </div>
+        *@
         
-            
-    </p>
-        
+        <div class="m-2 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+
+    </div>
     
-    <p>
-        
-         <b>&nbsp;&nbsp;State :<input type="text" placeholder= "@item.empstate" name="empstate"></b>
-        
-        
-    </p>
-    <p>
-        
-        <b>&nbsp;&nbsp;Blood Group :<input type="text" placeholder=" @item.empbg" name="empbg"></b> 
-        
-    </p>
-    <p>
-        
-        <b>&nbsp;&nbsp;DateOfBirth :<input type="date" placeholder=" @item.empdob" name="empdob"> </b> 
-        
-         
-    </p>
-    <p>
-       
-        <b>&nbsp;&nbsp;empemail:<input type="text" placeholder= "@item.empemail" name="empemail"> </b>
-        
-        
-    </p>
-     }
-     
-     
-     
+    </div> 
     
-       
-     
- </div>   
-<button id="butview" >Save</button><br>*@
+              
+  }
 
 
-
-@* @if (Model.empemail == null)
-{
-    <p> @Model.empemail</p>
-    
-}
-else
-{
-    <p>Email: @Model.empemail</p>
-    
-} *@
-
-@* <p>The value of empemail is: @ViewBag.empemail</p> *@
-
-
-    
-
-
-
-
-
-        
-@* </body> *@
 </html>

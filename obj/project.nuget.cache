@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IGl+ERa7lcPn7cSGvf2BE6JVuiABneE3gv+PJITitshz/sCLTgJPhXmRJz+G7/HniflHpOk77hM9EfuseVUQDw==",
+  "dgSpecHash": "+z3JIWuC7HdQhku2txucjtfirpgjJaOshbS/EAfXUoSZajNV7eocgH0BOv5+znPHGXikf4isd5lyaKpSw1H+FA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ELLIOT\\Desktop\\Nithi\\ASPIRE\\ASP.NET\\personaldetails\\personaldetails.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.9\\microsoft.aspnet.webpages.3.2.9.nupkg.sha512",
+    "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.3\\microsoft.aspnetcore.authentication.jwtbearer.6.0.3.nupkg.sha512",
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\ELLIOT\\.nuget\\packages\\microsoft.build\\16.9.0\\microsoft.build.16.9.0.nupkg.sha512",

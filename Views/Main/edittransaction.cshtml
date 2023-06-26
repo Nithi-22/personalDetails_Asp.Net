@@ -1,0 +1,115 @@
+  @model personaldetails.Models.Transaction;  
+ 
+ 
+    
+    
+@* @{
+    ViewBag.Title = "Edit";
+} *@
+@{ Layout = null; } 
+
+@try{
+  if(TempData["showmsg"]==null){
+    <script> swal("Nice", "Data has been edited", "success");</script>
+     
+    
+    
+    
+    
+    
+  }
+  else{
+    
+  }
+}
+catch{
+
+}
+<!DOCTYPE html>    
+
+<html>
+    
+        <head runat="server"> 
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  @* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> *@
+  <link rel="stylesheet" type="text/css" href="~/css/personaldetailshr.css"> 
+  
+  @* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> *@
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script> 
+  <script scr="site.js"></script>
+    </head>
+
+    
+
+ @using (Html.BeginForm("edittransaction", "Main", FormMethod.Post))
+{
+    
+    
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Edit Personal Details</h4>
+        
+        <hr /> 
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })  
+          @* @Html.HiddenFor(model => model.empemail, new { value = Model?.empemail }) *@
+             
+         <div class="form-group">
+            @Html.LabelFor(model => model.BankName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BankName, new { htmlAttributes = new { @class = "form-control",name="emp_name"  } })
+                
+            </div>
+        </div>
+        <div class="form-group">
+            
+            @Html.LabelFor(model => model.AccountNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AccountNo, new { htmlAttributes = new { @class = "form-control",name="emp_email"  } })
+                
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Accountholdername, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Accountholdername, new { htmlAttributes = new { @class = "form-control",name="emp_addr"  } })
+                
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ifsccode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ifsccode, new { htmlAttributes = new { @class = "form-control" },name="empcity"  })
+                
+            </div>
+        </div>
+        
+              
+    
+
+        @* <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="Submit" value="Save" class="btn btn-default"  />
+            </div>
+           
+        </div>
+        *@
+        
+        <div class="m-2 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+
+    </div>
+    
+    </div> 
+    
+              
+  }
+
+
+</html>

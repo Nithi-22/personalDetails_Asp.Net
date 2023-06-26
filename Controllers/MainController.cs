@@ -30,11 +30,11 @@ public class MainController : Controller
      performance=performanceContext;
      _logger=logger;
    }
-    public IActionResult Success(){
-        _logger.LogWarning("this is warning log");
-       
-        return View();
-    }
+   
+    // public IActionResult Success(){
+    //     _logger.LogWarning("this is warning log");
+    //      return View();
+    // }
     public IActionResult Personal(){
        var useremail=TempData["mail"];
       
@@ -49,36 +49,45 @@ public class MainController : Controller
        
        
         return View(user);
+
     }
-    public IActionResult SessionExpired(){
+    public IActionResult SessionExpired()
+    {
         
         return View();
     }
-    public IActionResult Team(){
+    public IActionResult Team()
+    {
         var useremail1=TempData["mail"];
        var user=tc.Teamdet.Select(u=>u) ;
         return View(user);
     }
-    public IActionResult Transaction(){
+    public IActionResult Transaction()
+    {
         var useremail1=TempData["mail"];
        var user=transaction.TransactionDetails.Select(u=>u) ;
         return View(user);
     }
-    public IActionResult Dailyperformance(){
+    public IActionResult Dailyperformance()
+    {
         var useremail1=TempData["mail"];
        var user=performance.performancedetails.Select(u=>u) ;
         return View(user);
     }
-    public IActionResult Successhr(){
+    public IActionResult Successhr()
+    {
         
         return View();
     }
     
-    public IActionResult personaldetailshr(){
-        var useremail=TempData["mailid"];
+    public IActionResult personaldetailshr()
+    {
+        var useremail=TempData["mailidd"];
+        TempData.Keep("mailidd");
        
        var userr=db.SignupDetails.Where(u=>u.empemail==useremail ).Select(u=>u) ;
-        return View(userr);
+         return View(userr);
+        
     
     
     
@@ -86,7 +95,8 @@ public class MainController : Controller
 
 
 
-    public IActionResult teamhr(){
+    public IActionResult teamhr()
+    {
         var useremail=TempData["mailid"];
       
        var userr=tc.Teamdet.Where(u=>u.empemail==useremail ).Select(u=>u) ;
@@ -123,20 +133,24 @@ public class MainController : Controller
             if(res==1){
              
               HttpContext.Session.SetString("empemail",reg.empemail);
+              
          CookieOptions option = new CookieOptions();
 
         option.Expires = DateTime.Now.AddDays(5);
           
          Response.Cookies.Append("empemail", $"{reg?.empemail}", option);
           Response.Cookies.Append("emppass", $"{reg?.emppass}", option);
-          TempData["mailid"]=reg.empemail;
-          TempData.Keep("mailid");
-          TempData["mail"]=reg.empemail;
-          TempData.Keep("mail");
-          TempData["maill"]=reg.empemail;
-          TempData.Keep("maill");
-         TempData["m"]=reg.empemail;
-         TempData.Keep("m");
+          TempData["TempDataKey"] = HttpContext.Session.GetString("empemail");
+         
+              TempData.Keep("TempDatakey");
+          TempData["mailidd"]=TempData["TempDataKey"] ;
+          TempData.Keep("mailidd");
+           TempData["empemail"]=TempData["TempDataKey"] ;
+          TempData.Keep("empemail");
+          
+         
+         
+
           
               return RedirectToAction("personaldetailshr","Main");
               
@@ -211,7 +225,7 @@ public class MainController : Controller
        }
        [HttpPost]
        public IActionResult choosetransaction(IFormCollection fc ){
-     reg.empemail=fc["empemail"];
+            reg.empemail=fc["empemail"];
             int res=dblayer.LoginMtd(fc["empemail"],fc["emppass"]);
 
             if(res==1){
@@ -225,6 +239,7 @@ public class MainController : Controller
           Response.Cookies.Append("emppass", $"{reg?.emppass}", option);
           TempData["mailid"]=reg.empemail;
           TempData.Keep("mailid");
+          
               return RedirectToAction("transactionhr","Main");
               
             }
@@ -238,56 +253,225 @@ public class MainController : Controller
       
       //  var userr=db.SignupDetails.Where(u=>u.empemail==useremail ).Select(u=>u) ;
       //   return View(userr);
-      
-       public IActionResult editpersonaldetails(Register register){
+      [HttpPost]
+       public IActionResult editpersonaldetails( Register register){
 
         
-        var useremail= TempData["m"];
-        TempData.Keep("m");
+        
+          var useremail=TempData["mailidd"];
           
-       var user = db.SignupDetails.Where(u => u.empemail == useremail).Select(u=> u);
-       //var user = db.SignupDetails.Select(u => u.empemail == useremail);
+
+    
+          TempData["mailidd"]=useremail;
+        
+       //var userr = db.SignupDetails.Where(u => u.empemail ==useremail ).Select(u=>u);
+       var user = db.SignupDetails.FirstOrDefault(u => u.empemail == useremail);
+       //var userr = db.SignupDetails.FirstOrDefault(u => u.empemail.Equals(useremail, StringComparison.OrdinalIgnoreCase));
+      
+       
+       using (var transaction = db.Database.BeginTransaction())
+{
+    try
+    {
+       
+    
+         if(user!=null  && register.emp_name != null){
+         
+             user.emp_name=register.emp_name;
+               user.empaddr = register.empaddr;
+               user.empcity = register.empcity;
+              user.empstate = register.empstate;
+              user.emprole = register.emprole;
+              user.empphoneno =  register.empphoneno;
+               user.empjoiningdate =  register.empjoiningdate;
+                user.empdob = register.empdob;
+               user.empbg =  register.empbg;
+               db.SaveChanges();
+               
+              //  return RedirectToAction("Index","Home");
+         }
+         transaction.Commit();
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception
+        transaction.Rollback();
+        // Log the exception or display an error message
+    }}
+     TempData["showw"] = "Successfully edited";
+               TempData["infoo"]="click ok";
          return View(user);
+         
+       }//
+//        [HttpPost]
+// public IActionResult editpersonaldetails(Register register){
+// var useremail=TempData["mailidd"];
+          
+
+    
+//           TempData["mailidd"]=useremail;
+     
+//         var user = db.SignupDetails.FirstOrDefault(u => u.empemail ==register.empemail);
+//      if (user != null  ){
+      
+           
+//              user.emp_name = register.emp_name;
+             
+//              user.empaddr = register.empaddr;
+//              user.empcity = register.empcity;
+//              user.empstate = register.empstate;
+//              user.emprole = register.emprole;
+//              user.empphoneno = register.empphoneno;
+//               user.empjoiningdate = register.empjoiningdate;
+//               user.empdob = register.empdob;
+//              user.empbg = register.empbg;
+//               db.SaveChanges();
+//         TempData["showmsgg"]="Successfully edited";
+//        return RedirectToAction("Index","Home");
+//        //return View();
+//      }
+//     return View(register);
+// }
+
+       [HttpPost]
+       public IActionResult editteam(Team team ){
+     
+            var useremail=TempData["mailidd"];
+          
+
+    
+          TempData["mailidd"]=useremail;
+        
+       //var userr = db.SignupDetails.Where(u => u.empemail ==useremail ).Select(u=>u);
+       var user = tc.Teamdet.FirstOrDefault(u => u.empemail == useremail);
+       //var userr = db.SignupDetails.FirstOrDefault(u => u.empemail.Equals(useremail, StringComparison.OrdinalIgnoreCase));
+      
+       
+       using (var transaction = tc.Database.BeginTransaction())
+{
+    try
+    {
+       
+    
+         if(user!=null  && team.team_name != null){
+         
+             user.team_name=team.team_name;
+               user.team_lead = team.team_lead;
+               user.team_mem1 = team.team_mem1;
+              user.team_mem2 = team.team_mem2;
+              user.team_mem3 = team.team_mem3;
+              user.team_manager =  team.team_manager;
+               
+               tc.SaveChanges();
+               
+              //  return RedirectToAction("Index","Home");
+         }
+         transaction.Commit();
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception
+        transaction.Rollback();
+        // Log the exception or display an error message
+    }}
+     TempData["showw"] = "Successfully edited";
+               TempData["infoo"]="click ok";
+         return View(user);
+         
+       
        }
        [HttpPost]
-public IActionResult editpersonaldetails(Register register,IFormCollection fc){
+       public IActionResult edittransaction(Transaction transactions ){
+     
+           var useremail=TempData["mailidd"];
+          
 
-     var useremail= TempData["m"];
-        TempData.Keep("m");
-   
-      //var userss = db.SignupDetails.Select(u => u.empemail ==register.empemail);
-        var userss = db.SignupDetails.FirstOrDefault(u => u.empemail == register.empemail);
-     if (userss != null  ){
-      
+    
+          TempData["mailidd"]=useremail;
         
-             userss.emp_name = register.emp_name;
-             userss.empaddr = register.empaddr;
-             userss.empcity = register.empcity;
-             userss.empstate = register.empstate;
-             userss.emprole = register.emprole;
-             userss.empphoneno = register.empphoneno;
-              userss.empjoiningdate = register.empjoiningdate;
-              userss.empdob = register.empdob;
-             userss.empbg = register.empbg;
-              db.SaveChanges();
-        TempData["showmsgg"]="Successfully edited";
-       return RedirectToAction("Index","Home");
-     }
-    return View(userss);
-}
-
-
-       public IActionResult editteam( ){
-     
-            return View();
+       //var userr = db.SignupDetails.Where(u => u.empemail ==useremail ).Select(u=>u);
+       var user = transaction.TransactionDetails.FirstOrDefault(u => u.empemail == useremail);
+       //var userr = db.SignupDetails.FirstOrDefault(u => u.empemail.Equals(useremail, StringComparison.OrdinalIgnoreCase));
+      
+       
+       using (var transactionn = transaction.Database.BeginTransaction())
+{
+    try
+    {
+       
+    
+         if(user!=null  && transactions.BankName != null){
+         
+             user.BankName=transactions.BankName;
+               user.AccountNo = transactions.AccountNo;
+               user.Accountholdername = transactions.Accountholdername;
+              user.ifsccode = transactions.ifsccode;
+              
+               
+               transaction.SaveChanges();
+               
+              //  return RedirectToAction("Index","Home");
+         }
+         transactionn.Commit();
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception
+        transactionn.Rollback();
+        // Log the exception or display an error message
+    }}
+     TempData["showw"] = "Successfully edited";
+               TempData["infoo"]="click ok";
+         return View(user);
+         
        }
-       public IActionResult edittransaction( ){
+       
+       [HttpPost]
+       public IActionResult editperformance( Performance perform){
+
      
-            return View();
-       }
-       public IActionResult editperformance( ){
-     
-            return View();
+            var useremail=TempData["mailidd"];
+          
+
+    
+          TempData["mailidd"]=useremail;
+        
+       //var userr = db.SignupDetails.Where(u => u.empemail ==useremail ).Select(u=>u);
+       var user = performance.performancedetails.FirstOrDefault(u => u.empemail == useremail);
+       //var userr = db.SignupDetails.FirstOrDefault(u => u.empemail.Equals(useremail, StringComparison.OrdinalIgnoreCase));
+      
+       
+       using (var transaction = performance.Database.BeginTransaction())
+{
+    try
+    {
+       
+    
+         if(user!=null  && perform.team_name != null){
+         
+             user.team_name=perform.team_name;
+               user.team_lead = perform.team_lead;
+               user.team_mem1 = perform.team_mem1;
+              user.team_mem2 = perform.team_mem2;
+              user.team_mem3 = perform.team_mem3;
+              user.team_manager =  perform.team_manager;
+               
+               performance.SaveChanges();
+               
+              //  return RedirectToAction("Index","Home");
+         }
+         transaction.Commit();
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception
+        transaction.Rollback();
+        // Log the exception or display an error message
+    }}
+     TempData["showw"] = "Successfully edited";
+               TempData["infoo"]="click ok";
+         return View(user);
+         
        }
 
 

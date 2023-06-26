@@ -4,6 +4,11 @@ using personaldetails.Models;
 using System.Collections.Generic;    
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Data;
 using System.Windows;
 using System.Configuration;
@@ -26,6 +31,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Serilog;
+ 
 using System.Text.RegularExpressions;
 
 
@@ -44,7 +50,7 @@ public class HomeController: Controller{
     DatabaseConnection db=new DatabaseConnection(); 
     DatabaseConnectionHr dbhr=new DatabaseConnectionHr();
         private readonly IConfiguration _configuration;
-    
+    private readonly ILogger<HomeController> _logger;
        private readonly SignupContext _context;
 
 
@@ -66,6 +72,9 @@ public class HomeController: Controller{
       
       return View();
      }
+         
+      
+    
        public IActionResult Login( ){
      
         return View();
@@ -74,37 +83,66 @@ public class HomeController: Controller{
           [HttpPost]
           public IActionResult Login(IFormCollection fc ){
             reg.empemail=fc["empemail"];
+            reg.emppass=fc["emppass"];
             int res=dblayer.LoginMtd(fc["empemail"],fc["emppass"]);
 
             if(res==1){
              
+        
               HttpContext.Session.SetString("empemail",reg.empemail);
-         CookieOptions option = new CookieOptions();
+               HttpContext.Session.SetString("emppass",reg.emppass);
+          CookieOptions option = new CookieOptions();
 
-        option.Expires = DateTime.Now.AddDays(5);
+         option.Expires = DateTime.Now.AddDays(5);
           
-         Response.Cookies.Append("empemail", $"{reg?.empemail}", option);
-          Response.Cookies.Append("emppass", $"{reg?.emppass}", option);
+          Response.Cookies.Append("empemail", $"{reg?.empemail}", option);
+           Response.Cookies.Append("emppass", $"{reg?.emppass}", option);
+          
+          var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes("abcdhksksksksbjdsbjdsjbdsbjdsbjdsbjdsbjdsbjdsbjdsbjdsbjds");
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new Claim[]
+            {
+                new Claim(ClaimTypes.Email, reg.empemail),
+               new Claim("Password", reg.emppass),
+                // Add additional claims as needed
+            }),
+            Expires = DateTime.UtcNow.AddDays(7), // Set token expiration
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        var tokenString = tokenHandler.WriteToken(token);
+        Response.Headers.Add("Authorization", "Bearer " + tokenString);
+         //return Ok(new { Token = tokenString });
+         //var Token = tokenString ;
+         
           TempData["mail"]=reg.empemail;
           TempData.Keep("mail");
-              return RedirectToAction("Success","Main");
-
+          return RedirectToAction("Success","Home");
             }
+
+            
             else{
               TempData["Message"]="Login failure";
+             
             }
             
         return View();
         }
-        
-       
+         [Authorize]
        public IActionResult Success(){
-         
-         return View();
+       string successPath = Request.Query["successPath"];
+        
+        return View();
         }
+     
+        
+        
       public IActionResult wrong(){
         return View();
       }
+       
       public IActionResult HrLogin( ){
      
         return View();
@@ -120,7 +158,7 @@ public class HomeController: Controller{
          CookieOptions option = new CookieOptions();
 
         option.Expires = DateTime.Now.AddDays(1);
-
+            option.Path = "/";
          Response.Cookies.Append("email", $"{hr?.email}", option);
           Response.Cookies.Append("pass", $"{hr?.pass}", option);
               return RedirectToAction("Successhr","Main");
@@ -148,7 +186,22 @@ public class HomeController: Controller{
         //         return Json($"Email {email} is already in use");
         //     }
         // }
-      
+      public async Task<IActionResult> Logout()
+{
+    // Clear session variables
+    HttpContext.Session.Clear();
+
+    // Delete cookies
+    Response.Cookies.Delete("email");
+    Response.Cookies.Delete("pass");
+    Response.Cookies.Delete("empemail");
+    Response.Cookies.Delete("emppass");
+
+    // Sign out user
+    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+    return RedirectToAction("Index", "Home");
+}
       
 
       

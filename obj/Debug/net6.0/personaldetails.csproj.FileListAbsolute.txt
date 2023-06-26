@@ -318,3 +318,4 @@ C:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\obj\Debug\net6.0\sc
 C:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\obj\Debug\net6.0\personaldetails.csproj.CopyComplete
 C:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\obj\Debug\net6.0\personaldetails.genruntimeconfig.cache
 C:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\obj\Debug\net6.0\ref\personaldetails.dll
+C:\Users\ELLIOT\Desktop\Nithi\ASPIRE\ASP.NET\personaldetails\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
